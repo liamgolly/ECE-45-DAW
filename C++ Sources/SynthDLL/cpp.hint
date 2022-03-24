@@ -1,0 +1,2 @@
+#define SYNTHDLL_API __declspec(dllexport)
+#define SYNTHDLL_API __declspec(dllimport)

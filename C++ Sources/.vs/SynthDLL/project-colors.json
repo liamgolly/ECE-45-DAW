@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b37e6cca-fc83-4c3a-881a-9d6939d981b8": {
+      "ProjectGuid": "b37e6cca-fc83-4c3a-881a-9d6939d981b8",
+      "DisplayName": "SynthDLL",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

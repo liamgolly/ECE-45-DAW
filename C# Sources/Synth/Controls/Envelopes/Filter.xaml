@@ -1,0 +1,91 @@
+﻿<local:Envelope x:Class="Synth.Controls.Envelopes.Filter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Synth.Controls.Envelopes"
+             xmlns:wpfui="clr-namespace:WPFUI.Controls;assembly=WPFUI"
+             mc:Ignorable="d">
+    <Grid>
+        <wpfui:Card MinWidth="450" MinHeight="450">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height = "1.2*"/>
+                    <RowDefinition Height = "5*"/>
+                    <RowDefinition Height = "4.5*"/>
+                    <RowDefinition Height = "2.5*"/>
+                    <RowDefinition Height = "2*"/>
+                </Grid.RowDefinitions>
+
+                <TextBox Text="Filter" TextAlignment="Center" IsReadOnly="True"/>
+                <wpfui:Card Background="White" Grid.Row="1" Margin="5,5,5,5">
+                    <Canvas x:Name="PathContainer">
+                        <Path Stroke="Black" 
+                          StrokeThickness="1" 
+                          x:Name="GraphControl"/>
+
+                    </Canvas>
+                </wpfui:Card>
+
+                <wpfui:Card Grid.Row="2" Margin="5,5,5,5">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <StackPanel Margin="5,5,5,5" Width="100">
+                            <TextBox Text="Frequency" TextAlignment="Center" IsReadOnly="True"/>
+                            <Slider IsMoveToPointEnabled="True" x:Name="TimeSlider" Minimum="0" Maximum="8000" IsEnabled="False"/>
+                            <TextBox x:Name="TimeText" IsEnabled="False" Text="{
+                                Binding ElementName=TimeSlider, 
+                                Path=Value, 
+                                UpdateSourceTrigger=PropertyChanged, 
+                                Mode=TwoWay,
+                                Delay=350}"/>
+                        </StackPanel>
+                        <StackPanel Margin="5,5,5,5" Width="100">
+                            <TextBox Text="Gain" TextAlignment="Center" IsReadOnly="True"/>
+                            <Slider IsMoveToPointEnabled="True" x:Name="ValueSlider" Minimum="-4" Maximum="8" IsEnabled="False"/>
+                            <TextBox x:Name="ValueText" IsEnabled="False" Text="{
+                                Binding ElementName=ValueSlider, 
+                                Path=Value, 
+                                UpdateSourceTrigger=PropertyChanged, 
+                                Mode=TwoWay,
+                                Delay=350}"/>
+                        </StackPanel>
+                        <StackPanel Margin="5,5,5,5" Width="100">
+                            <TextBox Text="Cutoff" TextAlignment="Center" IsReadOnly="True"/>
+                            <Slider IsMoveToPointEnabled="True" x:Name="CutoffSlider" Minimum="2" Maximum="5" Value="4" IsEnabled="False"/>
+                            <TextBox x:Name="CutoffText" IsEnabled="False" Text="{
+                                Binding ElementName=CutoffSlider, 
+                                Path=Value, 
+                                UpdateSourceTrigger=PropertyChanged, 
+                                Mode=TwoWay,
+                                Delay=350}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </wpfui:Card>
+                <wpfui:Card Grid.Row="3" Margin="5,5,5,5">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                        <wpfui:Button x:Name="lowPass" Margin="5,5,5,5" Content="Low Pass" Icon="Add28" Click="lowPass_Click"/>
+                        <wpfui:Button x:Name="highPass" Margin="5,5,5,5" Content="High Pass" Icon="Add28" Click="highPass_Click"/>
+                    </StackPanel>
+                </wpfui:Card>
+
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <wpfui:Button  Margin="5,5,5,5" Icon="Subtract28" Content="Remove Selected Pass" Click="removePass"/>
+
+                    <wpfui:Card Grid.Column="1" Margin="5,5,5,5">
+                        <RadioButton x:Name="Left" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="Pass" IsEnabled="False" Click="Left_Click"/>
+                    </wpfui:Card>
+                    <wpfui:Card Grid.Column="2" Margin="5,5,5,5">
+                        <RadioButton x:Name="Right" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="Pass" IsEnabled="False" Click="Right_Click"/>
+                    </wpfui:Card>
+
+                </Grid>
+            </Grid>
+        </wpfui:Card>
+    </Grid>
+</local:Envelope>

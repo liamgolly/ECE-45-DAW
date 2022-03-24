@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "38H6eXQCyTu4Gks81QPwiGLJxdR9rpO+ldxTUPI6b2VbnIaUK86YkGYknVlR7n7Zl5KEMH6ym4QfT/e2ZLRpFQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Liam\\source\\repos\\Synth\\Synth\\Synth.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Liam\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Liam\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\Liam\\.nuget\\packages\\wpf-ui\\1.2.1\\wpf-ui.1.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synth", "Synth\Synth.csproj", "{F688BDFD-8885-41E3-9BD2-D06E05ADB22D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F688BDFD-8885-41E3-9BD2-D06E05ADB22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F688BDFD-8885-41E3-9BD2-D06E05ADB22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F688BDFD-8885-41E3-9BD2-D06E05ADB22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F688BDFD-8885-41E3-9BD2-D06E05ADB22D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09E03F35-4832-4D6B-80FD-3586AE0EB089}
+	EndGlobalSection
+EndGlobal

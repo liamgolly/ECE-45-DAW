@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Synth.Controls.hSynth"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Synth.Controls"
+             xmlns:wpfui="clr-namespace:WPFUI.Controls;assembly=WPFUI"
+             mc:Ignorable="d" >
+    <Grid>
+        <wpfui:Card Height="260" Width="390">
+            <StackPanel>
+                <TextBox IsReadOnly="True" Text="Synth" TextAlignment="Center" Margin="5,5,5,5"/>
+                <wpfui:Card Grid.Row="1" Margin="5,5,5,5" Height="140">
+                    <InkCanvas EditingMode="None" Height="120">
+                        <Path Stroke="Black" StrokeThickness="1" x:Name="CurrentWaveform"/>
+                    </InkCanvas>
+                </wpfui:Card>
+
+            </StackPanel>
+        </wpfui:Card>
+    </Grid>
+</UserControl>

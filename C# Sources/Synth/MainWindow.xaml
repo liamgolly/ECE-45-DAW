@@ -1,0 +1,58 @@
+﻿<Window x:Class="Synth.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Synth"
+        xmlns:pages="clr-namespace:Synth.Pages"
+        xmlns:wpfui="clr-namespace:WPFUI.Controls;assembly=WPFUI"
+        Style="{StaticResource UiWindow}"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="1080" MinWidth="1920">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <wpfui:TitleBar Grid.Row="0" ApplicationNavigation="True" />
+
+        <Grid Grid.Row="1" Margin="12,6,12,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+            </Grid.RowDefinitions>
+
+            <wpfui:NavigationStore Grid.RowSpan="2" 
+                                    x:Name="RootNavigation"
+                                    Frame="{Binding ElementName=RootFrame}"
+                                    Loaded="RootNavigation_OnLoaded">
+                <wpfui:NavigationStore.Items>
+                    <wpfui:NavigationItem 
+                        Content="Home" 
+                        Icon="Home48"
+                        Tag="home"
+                        Type="{x:Type pages:Home}" />
+
+                </wpfui:NavigationStore.Items>
+            </wpfui:NavigationStore>
+
+            <Border
+                Grid.Column="1"
+                Background="{DynamicResource ControlFillColorDefaultBrush}"
+                CornerRadius="8,0,8,0">
+                <Grid>
+                    <Frame x:Name="RootFrame"/>
+                    <wpfui:Breadcrumb
+                        Margin="18,18,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="24"
+                        Navigation="{Binding ElementName=RootNavigation}"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

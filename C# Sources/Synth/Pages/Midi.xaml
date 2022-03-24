@@ -1,0 +1,46 @@
+﻿<Page x:Class="Synth.Pages.Midi"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Synth.Pages"
+      xmlns:c="clr-namespace:Synth.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+            xmlns:wpfui="clr-namespace:WPFUI.Controls;assembly=WPFUI"
+
+      Title="Midi">
+
+    <Grid Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <wpfui:Card Margin="5,5,5,5" Grid.Column="1" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <wpfui:Card>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox x:Name="comboBox" Width="400" Margin="5,5,5,5" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0" SelectedValuePath="Content">
+                            <ComboBoxItem Content="NoSynthSelected"/>
+                        </ComboBox>
+                        <TextBox Text="BPM: " IsReadOnly="True" Margin="5,5,5,5"/>
+                        <TextBox Width="200" Margin="5,5,5,5" x:Name="bpm"/>
+                        <wpfui:Button Content="Play Track" Icon="Play28" Margin="5,5,5,5" Click="Button_Click"/>
+                    </StackPanel>
+                </wpfui:Card>
+
+
+                <wpfui:Card x:Name="RollHolder" Grid.Row="1" Margin="0,5,0,5">
+                </wpfui:Card>
+            </Grid>
+        </wpfui:Card>
+    </Grid>
+</Page>
